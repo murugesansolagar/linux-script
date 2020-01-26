@@ -1,0 +1,24 @@
+#' This Script uses math operators with case statement to get arguments as option as addition or subtraction or multiplication or division of two numbers. Created on 26Jan2020'
+
+#!/bin/bash
+
+op=$1
+num1=$2
+num2=$3
+
+case "$1" in
+A)	total=$((num1+num2))
+	echo "Addition of $num1 and $num2 is $total";;
+S)	total=$((num1-num2))
+	echo "Subraction of $num1 and $num2 is $total";;
+M)	total=$((num1*num2))
+	echo "Multiplication of $num1 and $num2 is $total";;
+D)	total=$((num1 / num2))
+	echo "Division of $num1 and $num2 is $total";;
+*)	echo "Usage : mathscript <option> <number1> <number2>"
+	echo "Options 	A - Addition"
+	echo "		S - Subtraction"
+	echo "		M - Multiplication"
+	echo "		D - Division"
+esac
+
