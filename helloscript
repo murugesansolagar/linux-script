@@ -1,0 +1,12 @@
+#	This Script will print "Hello World".Created on 26/01/2020
+
+#!/bin/bash
+
+#	using echo 
+echo "Hello World"
+
+# Terminate the script
+
+exit 0
+
+
