@@ -2,7 +2,7 @@
 
 #!/bin/bash
 
-#	using echo 
+#	Print using echo 
 echo "Hello World"
 
 # Terminate the script
