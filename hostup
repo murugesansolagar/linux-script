@@ -1,0 +1,23 @@
+#	This Simple Script scans for the hosts that are up in a given network with validating the input ip address with network bits as 24. Created on 27Jan2020
+#
+#!/bin/bash
+ip=$1
+# 	scanhost() is a function using ping command to validate host up or not  
+scanhost(){
+	ping -c 1 $addr > /dev/null
+	[ $? -eq 0 ] && echo Node with IP: $addr is UP $?.
+	 
+}
+
+if [[ $ip =~ ^[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}$ ]]; then
+
+	for i in {1..254} 
+	do
+		addr=$ip.$i
+		scanhost $addr & disown
+	done
+      else
+	echo " Usage : hostup <ip address> in 3 octets "
+	echo " Example : hostup 192.168.1 "
+fi
+
