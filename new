@@ -1,0 +1,6 @@
+#!/bin/bash -x
+dir="/$1"
+[ ! -d $dir ] && { echo " $dir does not exist" ; }
+[ -d $dir ] && { echo " $dir does exist " ; }
+exit 0
+
